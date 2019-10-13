@@ -1,0 +1,20 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-searchbar color="medium search-filter" [formControl]="filterBox" animated></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngIf="names$ | async as names; else loading">
+    <ion-item *ngFor="let name of names" (click)="openNameDetails(name)">
+      <ion-icon *ngIf="name.gender == 'Boy'; else girl" color="primary" name="male"></ion-icon>
+      <ng-template #girl>
+        <ion-icon color="pink" name="female"></ion-icon>
+      </ng-template>      
+      <ion-label class="name-icon-padding">{{name.name}}</ion-label>
+      <ion-label>{{name.meaning}}</ion-label>
+    </ion-item>
+  </ion-list>
+  <ng-template #loading>
+      <mat-spinner class="loading" [diameter]="50"></mat-spinner>
+  </ng-template>  
+</ion-content>

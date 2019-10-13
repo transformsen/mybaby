@@ -1,0 +1,25 @@
+.submit-button{
+    margin: 10px;
+}
+ion-content{
+    --ion-background-color:#10dc60;
+}
+.add-form{
+    ion-label{
+        color: white;
+    }
+    ion-input{
+        background: white;
+        border-radius: 10px;
+        padding-right: 30px;
+        input{
+            margin-left: 20px;
+        }
+    }
+    ion-select{
+        background: white;
+        border-radius: 10px;
+        max-width: 100vh;
+        width: 100%;
+    }
+}

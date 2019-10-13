@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-button slot="start" fill="clear" (click)="close()">
+      <ion-icon slot="icon-only" color="light" name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-button slot="end" fill="clear" (click)="close()">
+        <ion-icon slot="icon-only" color="light" name="exit"></ion-icon>
+      </ion-button>
+    <ion-title color="light">
+      Welcome {{username$ | async}}!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="add-form">
+  <form [formGroup]="nameForm">
+    <ion-item>
+      <ion-label position="fixed">Name</ion-label>
+      <ion-input formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Meaning</ion-label>
+      <ion-input formControlName="meaning"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Origin</ion-label>
+      <ion-input formControlName="origin"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Gender</ion-label>
+      <ion-select formControlName="gender" placeholder="Select One">
+        <ion-select-option *ngFor="let g of genders" value="{{g.id}}">{{g.label}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Numerology</ion-label>
+      <ion-input formControlName="numerology"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Syllables</ion-label>
+      <ion-input formControlName="syllables"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Religion</ion-label>
+      <ion-select formControlName="religion" placeholder="Select One">
+        <ion-select-option *ngFor="let r of religions" value="{{r.id}}">{{r.label}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Rashi</ion-label>
+      <ion-select formControlName="rashi" placeholder="Select One">
+        <ion-select-option *ngFor="let r of rashis" value="{{r}}">{{r}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Nakshatra</ion-label>
+      <ion-select formControlName="nakshatra" placeholder="Select One">
+        <ion-select-option *ngFor="let n of nakshatrs" value="{{n}}">{{n}}</ion-select-option>
+      </ion-select>
+    </ion-item>    
+      <ion-button color="primary" [disabled]="!nameForm.valid" (click)="addName()" class="ion-float-right submit-button">
+        Submit</ion-button>
+      <ion-button color="danger" (click)="close()" class="ion-float-right submit-button">Cancel</ion-button>    
+  </form>
+</ion-content>

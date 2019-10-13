@@ -1,0 +1,17 @@
+%baby-img-shared{
+    clip-path: circle(30%);
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.baby-img{
+    @extend %baby-img-shared;
+}
+
+.baby-img-boy{
+    clip-path: circle(35%);
+    @extend %baby-img-shared;
+}

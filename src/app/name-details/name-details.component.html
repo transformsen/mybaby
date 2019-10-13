@@ -1,0 +1,27 @@
+<ion-card *ngIf="name$ | async as name">
+  <ion-card-header>
+    <ion-card-subtitle class="meaning">{{name[0].meaning}}</ion-card-subtitle>
+    <ion-card-title>{{name[0].name}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label *ngIf="name[0].gender=='Boy'; else girl" color="primary">Congratulation on your baby Boy
+          <ion-icon class="congratz-icon" name="heart"></ion-icon>
+        </ion-label>
+        <ng-template #girl>
+          <ion-label color="pink">Congratulation on your baby Girl
+            <ion-icon class="congratz-icon" name="bowtie"></ion-icon>
+          </ion-label>
+        </ng-template>
+      </ion-item>
+      <app-name-details-item [nameDetail]="name[0]" [field]="'religion'"></app-name-details-item>
+      <app-name-details-item [nameDetail]="name[0]" [field]="'numerology'"></app-name-details-item>
+      <app-name-details-item [nameDetail]="name[0]" [field]="'syllables'"></app-name-details-item>
+      <app-name-details-item [nameDetail]="name[0]" [field]="'nakshatra'"></app-name-details-item>
+      <app-name-details-item [nameDetail]="name[0]" [field]="'rashi'"></app-name-details-item>
+      <app-name-details-item [nameDetail]="name[0]" [field]="'origin'"></app-name-details-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="success">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-icon class="logo" color="light" name="flower"></ion-icon>
+  <div class="title ion-text-center" >
+    <h1>My Baby</h1>
+    <h6>Add your baby name</h6>
+  </div>
+  <form [formGroup]="signupForm">
+    <ion-grid>
+      <ion-row class="form-field">
+        <ion-label>
+          <ion-icon name="person" color="success"></ion-icon>
+        </ion-label>
+        <ion-input type="text" formControlName="username" placeholder="your name"></ion-input>
+      </ion-row>
+      <ion-row class="form-field">
+        <ion-label>
+          <ion-icon name="mail" color="success"></ion-icon>
+        </ion-label>
+        <ion-input type="email" formControlName="email" placeholder="your email"></ion-input>
+      </ion-row>
+      <ion-row class="form-field">
+        <ion-label>
+          <ion-icon name="eye" color="success"></ion-icon>
+        </ion-label>
+        <ion-input type="password" formControlName="password" placeholder="your password"></ion-input>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <ion-button class="signup-button" color="success" (click)="signUp()" [disabled]="!signupForm.valid">Sign up</ion-button>
+  <div class="ion-text-center">
+    <a class="already-account" [routerLink]="['../login']">Don't have an account? Sign Up</a>
+  </div>
+</ion-content>
