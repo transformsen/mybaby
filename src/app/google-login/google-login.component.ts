@@ -26,7 +26,7 @@ export class GoogleLoginComponent implements OnInit {
           {relativeTo: this.route})
       }, error=>{
         console.log('googleLogin error=',error)
-        this.presentToast(error.message)
+        this.presentToast(JSON.stringify(error))
       })
   }
   close(){
