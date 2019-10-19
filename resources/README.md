@@ -6,3 +6,7 @@ Cordova reference documentation:
 
 - Icons: https://cordova.apache.org/docs/en/latest/config_ref/images.html
 - Splash Screens: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk alias_name
+
+zipalign -v 4 app-release-unsigned.apk mybaby.apk
