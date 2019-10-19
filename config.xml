@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="transformstudios.app.mybaby" version="0.0.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="transformstudios.app.mybaby" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MyBaby</name>
     <description>An Baby Name seaching App</description>
     <author email="senthilsct91@gmail.com" href="https://kuttyminimi.blogspot.com/2019/10/about-developer.html">Transform Studios</author>
